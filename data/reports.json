@@ -1,0 +1,6 @@
+[
+  { "id": "fundo-alpha", "title": "Fundo Alpha", "tipo": "csv", "arquivo": "fundo-alpha.csv", "descricao": "Posição diária e rentabilidade" },
+  { "id": "fundo-beta", "title": "Fundo Beta", "tipo": "csv", "arquivo": "fundo-beta.csv", "descricao": "Posição diária e rentabilidade" },
+  { "id": "fluxo-caixa", "title": "Fluxo de Caixa Consolidado", "tipo": "csv", "arquivo": "fluxo-caixa.csv", "descricao": "Entradas e saídas mensais" },
+  { "id": "carteira-renda-fixa", "title": "Carteira Renda Fixa", "tipo": "csv", "arquivo": "carteira-renda-fixa.csv", "descricao": "Títulos, vencimentos e taxas" }
+]

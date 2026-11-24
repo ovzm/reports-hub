@@ -1,0 +1,7 @@
+Ativo,Indexador,Taxa,Vencimento,Quantidade,Valor de mercado (R$),% da carteira
+Tesouro Selic 2029,Selic,"+0,05%",01/03/2029,120,"868,000.00",23.07
+Tesouro IPCA+ 2035,IPCA,"+6,20%",15/05/2035,80,"552,000.00",14.67
+CDB Banco Exemplo,CDI,108%,12/08/2027,300,"858,000.00",22.81
+Debênture Energia XYZ,IPCA,"+7,10%",15/10/2031,150,"286,000.00",7.60
+LCI Imobiliária Demo,CDI,95%,20/02/2027,200,"876,000.00",23.29
+CRA Agro Fictício,CDI,"+1,40%",30/06/2030,90,"322,000.00",8.56
