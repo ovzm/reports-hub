@@ -1,0 +1,6 @@
+[
+  { "email": "admin@demo.com", "nome": "Admin Demo", "senha": "admin123", "role": "admin", "acessos": ["*"] },
+  { "email": "analista@demo.com", "nome": "Ana Analista", "senha": "analista123", "role": "user", "acessos": ["fundo-alpha", "fundo-beta", "fluxo-caixa"] },
+  { "email": "cliente@demo.com", "nome": "Carlos Cliente", "senha": "cliente123", "role": "user", "acessos": ["fundo-beta"] },
+  { "email": "visitante@demo.com", "nome": "Vera Visitante", "senha": "visitante123", "role": "user", "acessos": [] }
+]
