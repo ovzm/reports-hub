@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import { PUBLIC_DIR } from "./src/paths.js";
 import { authRouter } from "./src/auth.js";
 import { reportsRouter } from "./src/reports.js";
+import { bookRouter } from "./src/book.js";
 import { ensureSeed } from "./scripts/seed.js";
 // import { setupMicrosoftLogin } from "./src/microsoft.js";
 
@@ -24,10 +25,13 @@ app.use(express.json());
 
 app.use("/auth", authRouter);
 app.use("/api/reports", reportsRouter);
+app.use("/api/book", bookRouter);
 app.use(express.static(PUBLIC_DIR));
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
   console.log(`  Relatórios:         http://localhost:${PORT}/`);
+  console.log(`  Investments Book:   http://localhost:${PORT}/book/index.html`);
+  console.log(`  Painel admin Book:  http://localhost:${PORT}/book/pages/admin.html`);
 });

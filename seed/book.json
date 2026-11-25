@@ -1,0 +1,22 @@
+{
+  "weeks": [
+    { "id": 1, "nome": "Week 46" },
+    { "id": 2, "nome": "Week 47" },
+    { "id": 3, "nome": "Week 48" }
+  ],
+  "classes": [
+    { "id": 1, "nome": "Macro" },
+    { "id": 2, "nome": "Renda Variável" },
+    { "id": 3, "nome": "Crédito Privado" }
+  ],
+  "strategies": [
+    { "id": 1, "nome": "Long Only" },
+    { "id": 2, "nome": "Multimercado" }
+  ],
+  "reports": [
+    { "id": 1, "nome": "Panorama Macroeconômico Semanal", "descricao": "Resumo de juros, inflação e câmbio da semana.", "ano": "2026", "weekId": 1, "classeId": 1, "estrategiaId": 2, "relevancia": "High", "tipo": "pdf", "link": "", "texto": "", "amostra": "exemplo-panorama-macro.pdf" },
+    { "id": 2, "nome": "Carta Mensal do Gestor", "descricao": "Desempenho e estratégia do Fundo Alpha no mês.", "ano": "2026", "weekId": 2, "classeId": 3, "estrategiaId": 1, "relevancia": "Middle", "tipo": "pdf", "link": "", "texto": "", "amostra": "exemplo-carta-gestor.pdf" },
+    { "id": 3, "nome": "Análise Setorial — Energia Renovável", "descricao": "Visão de longo prazo para o setor de energia renovável.", "ano": "2026", "weekId": 3, "classeId": 2, "estrategiaId": 1, "relevancia": "Low", "tipo": "pdf", "link": "", "texto": "", "amostra": "exemplo-analise-setorial.pdf" },
+    { "id": 4, "nome": "Nota rápida: agenda da semana", "descricao": "Principais eventos econômicos previstos.", "ano": "2026", "weekId": 3, "classeId": 1, "estrategiaId": null, "relevancia": "Middle", "tipo": "texto", "link": "https://www.bcb.gov.br/", "textoPDF": "", "texto": "Segunda: boletim Focus.\nQuarta: decisão de juros.\nSexta: dados de emprego." }
+  ]
+}
