@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Relatório - Reports Hub</title>
+  <link rel="stylesheet" href="/css/table.css">
+</head>
+<body>
+  <div class="controls">
+    <a href="/page/menu.html" class="ctrl-btn">Voltar</a>
+    <button id="zoomOutBtn" class="ctrl-btn">–</button>
+    <button id="zoomInBtn" class="ctrl-btn">+</button>
+    <button id="resetBtn" class="ctrl-btn">Reset</button>
+    <span id="zoomValue" class="zoom-value">Zoom: 1.00×</span>
+    <span id="updatedAt" class="zoom-value"></span>
+  </div>
+
+  <div class="viewport">
+    <div id="stage">
+      <div class="container">
+        <div class="content-container">
+          <div class="content-title">
+            <h2 id="reportTitle">Relatório</h2>
+            <span class="brand-text">Reports Hub</span>
+          </div>
+          <div class="container-table">
+            <div class="table" id="tableWrap"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/session.js"></script>
+  <script src="/js/report.js"></script>
+</body>
+</html>
