@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reports Hub | Menu principal</title>
+    <link rel="stylesheet" href="/css/home.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-text light">Reports Hub</span>
+        <div><h1>Menu principal</h1></div>
+      </div>
+      <div class="user-area">
+        <span id="userLabel">Carregando usuário...</span>
+        <button id="logoutBtn" type="button">Sair</button>
+      </div>
+    </header>
+    <section class="intro">
+      <p>Escolha a área que deseja acessar.</p>
+    </section>
+    <section class="choices" aria-label="Áreas disponíveis">
+      <a class="choice" href="/page/menu.html">
+        <div class="choice-icon chart" aria-hidden="true">▥</div>
+        <div class="choice-copy"><span class="choice-label">ANÁLISE E INDICADORES</span><h3>Informações de Caixa</h3><p>Acesse os relatórios, fundos e indicadores disponíveis para o seu perfil.</p></div>
+        <span class="choice-arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="choice" href="/book/index.html">
+        <div class="choice-icon book" aria-hidden="true">▤</div>
+        <div class="choice-copy"><span class="choice-label">BIBLIOTECA DE DOCUMENTOS</span><h3>Investments Book</h3><p>Consulte relatórios em PDF, descrições e documentos organizados por ano e Week.</p></div>
+        <span class="choice-arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="choice admin-choice" id="bookAdminChoice" href="/book/pages/admin.html" hidden>
+        <div class="choice-icon admin" aria-hidden="true">⚙</div>
+        <div class="choice-copy"><span class="choice-label">ACESSO RESTRITO</span><h3>Administração do Book</h3><p>Cadastre relatórios, gerencie filtros e edite os documentos do Investments Book.</p></div>
+        <span class="choice-arrow" aria-hidden="true">→</span>
+      </a>
+    </section>
+    <footer>Reports Hub · Projeto de portfólio</footer>
+  </main>
+  <script src="/js/session.js"></script>
+  <script src="/js/home.js"></script>
+</body>
+</html>

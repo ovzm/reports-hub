@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reports Hub - Login</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23ce4926'/><path d='M8 22h4v-8H8zm6 0h4V10h-4zm6 0h4v-5h-4z' fill='white'/></svg>">
+  <link rel="stylesheet" href="/style.css">
+  <script defer src="/js/login.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="login-container">
+      <div class="login-title">
+        <h2>Login</h2>
+        <span class="brand-text">Reports Hub</span>
+      </div>
+
+      <form class="login-input" id="loginForm">
+        <input id="email" type="email" placeholder="E-mail" autocomplete="username" required>
+        <input id="senha" type="password" placeholder="Senha" autocomplete="current-password" required>
+        <button type="submit">Entrar</button>
+
+        <!--
+        <button type="button" class="ms-login-btn" id="msLoginBtn">Entrar com Microsoft</button>
+        -->
+
+        <p id="msg" class="login-msg"></p>
+      </form>
+
+      <details class="demo-users">
+        <summary>Usuários de demonstração</summary>
+        <table>
+          <tr><th>E-mail</th><th>Senha</th><th>Perfil</th></tr>
+          <tr><td>admin@demo.com</td><td>admin123</td><td>Admin · todos os relatórios</td></tr>
+          <tr><td>analista@demo.com</td><td>analista123</td><td>3 relatórios</td></tr>
+          <tr><td>cliente@demo.com</td><td>cliente123</td><td>1 relatório</td></tr>
+          <tr><td>visitante@demo.com</td><td>visitante123</td><td>Só o Book</td></tr>
+        </table>
+      </details>
+    </div>
+
+    <div class="information-container">
+      <h1>Gráfico de Indicadores</h1>
+      <p>Portal de relatórios com acesso por perfil. Faça login para visualizar as planilhas liberadas para o seu usuário e consultar o Investments Book.</p>
+    </div>
+  </div>
+</body>
+</html>

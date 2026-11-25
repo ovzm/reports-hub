@@ -1,0 +1,167 @@
+body {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      background: linear-gradient(135deg, #1f2125 0%, #3a3c41 55%, #24262a 100%);
+  background-attachment: fixed;    
+      height: 100vh;                
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 100%;
+      max-width: 1400px;
+      padding: 20px;
+    }
+    .information-container{
+      width: 540px;
+      border-left: 3px solid white;
+      padding-left: 4rem;
+    }
+    .information-container h1{
+      color: white;
+      font-size: 40px;
+      margin-bottom: 0;
+    }
+    .information-container p{
+      color: white;
+      font-size: 17px;
+      margin-top: 5px;
+    }
+    .information-container p:nth-of-type(2){
+      color: #ce4926;
+      font-size: 15px;
+      font: bolder;
+      margin-top: 2rem;
+    }
+    .login-container {
+      width: 500px;
+      display: flex;
+      flex-direction: column;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      color: #444241;
+    }
+    .login-title{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .login-title img{
+      width: 150px;
+      height: 30px;
+    }
+    .login-input{
+      display: flex;
+      flex-direction: column;
+    }
+    .login-input input{
+      padding: 10px;
+      margin-top: 10px;
+      border: solid 1px #8b8b8b;
+      border-radius: 10px;
+    }
+    .login-input button{
+      padding: 10px;
+      background: white;
+      color: #ce4926;
+      margin-top: 15px;
+      border: 1px solid;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+    .login-input button:hover {
+      background: #ce4926;
+      color: white;
+    }
+
+    
+
+.ms-login-btn {
+  margin-top: 20px;
+  padding: 12px;
+  width: 100%;
+  background: #ffffff;
+  border: 2px solid #d1d1d1;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.ms-login-btn:hover {
+  background: #f1f1f1;
+  border-color: #bbbbbb;
+}
+
+.brand-text {
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #ce4926;
+  font-size: 20px;
+}
+
+.login-input button[type="submit"] {
+  font-weight: 700;
+}
+
+.login-input button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.login-msg {
+  color: #ce4926;
+  min-height: 1em;
+}
+
+.demo-users {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #555;
+}
+
+.demo-users summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.demo-users table {
+  width: 100%;
+  margin-top: 10px;
+  border-collapse: collapse;
+}
+
+.demo-users th,
+.demo-users td {
+  text-align: left;
+  padding: 5px 6px;
+  border-bottom: 1px solid #eee;
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .login-container,
+  .information-container {
+    width: auto;
+    max-width: 500px;
+  }
+  .information-container {
+    padding-left: 1.5rem;
+  }
+}
