@@ -1,8 +1,9 @@
 node_modules/
+server/.env
 .env
-data/users.json
-data/book.json
-uploads/*
-!uploads/.gitkeep
+server/data/users.json
+server/data/book.json
+server/uploads/*
+!server/uploads/.gitkeep
 .DS_Store
 .vscode/

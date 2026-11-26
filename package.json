@@ -1,26 +1,17 @@
 {
   "name": "reports-hub",
-  "version": "1.0.0",
-  "description": "Portal de relatórios com controle de acesso por usuário e biblioteca de PDFs pesquisável (Investments Book).",
-  "main": "server.js",
-  "type": "module",
-  "scripts": {
-    "start": "node server.js",
-    "dev": "node --watch server.js",
-    "seed": "node scripts/seed.js",
-    "user": "node scripts/user.js"
-  },
+  "version": "2.0.0",
+  "private": true,
+  "description": "Portal de relatórios com controle de acesso por usuário e biblioteca de PDFs pesquisável.",
+  "workspaces": ["server"],
   "engines": {
-    "node": ">=18"
+    "node": ">=20.19"
   },
-  "license": "MIT",
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "cors": "^2.8.5",
-    "dotenv": "^17.2.3",
-    "express": "^5.1.0",
-    "jsonwebtoken": "^9.0.2",
-    "multer": "^2.0.2",
-    "pdfjs-dist": "^4.10.38"
-  }
+  "scripts": {
+    "dev": "npm run dev -w server",
+    "start": "npm run start -w server",
+    "seed": "npm run seed -w server",
+    "user": "npm run user -w server --"
+  },
+  "license": "MIT"
 }
