@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Investments Book | Reports</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-block">
+          <div>
+            <div class="brand-name">REPORTS HUB</div>
+            <div class="brand-subtitle">INVESTMENTS BOOK</div>
+          </div>
+        </div>
+        <a
+          class="home-link"
+          href="/page/home.html"
+          title="Voltar ao menu principal"
+        >
+          <span class="back-icon" aria-hidden="true">←</span>
+          <span>Voltar pro menu</span>
+        </a>
+      </header>
+
+      <div class="workspace">
+        <aside class="sidebar sidebar-left">
+          <div class="panel-heading">
+            <div>
+              <span class="eyebrow">NAVEGAÇÃO</span>
+              <h2>Períodos</h2>
+            </div>
+          </div>
+          <p class="panel-description">
+            Escolha um ano e uma Week para consultar os relatórios.
+          </p>
+          <div
+            id="periodList"
+            class="period-list"
+            aria-label="Períodos disponíveis"
+          >
+            <div class="loading-state">Carregando períodos...</div>
+          </div>
+        </aside>
+        <main class="main-content">
+          <section class="main-heading">
+            <div>
+              <span class="eyebrow">CENTRAL DE DOCUMENTOS</span>
+              <h1 id="mainTitle">Consulte seus relatórios</h1>
+              <p id="mainSubtitle">
+                Selecione um período à esquerda ou use os filtros de pesquisa.
+              </p>
+            </div>
+            <div id="resultCount" class="result-count">0 relatórios</div>
+          </section>
+
+          <div id="pdfContainer" class="document-area" aria-live="polite">
+            <div class="empty-state">
+              <div class="empty-icon" aria-hidden="true">▤</div>
+              <h2>Encontre um relatório</h2>
+              <p>
+                Selecione um ano e uma Week no menu lateral ou pesquise pelo
+                nome, descrição ou filtro.
+              </p>
+            </div>
+          </div>
+        </main>
+        <aside class="sidebar sidebar-right">
+          <div class="panel-heading">
+            <div>
+              <span class="eyebrow">LOCALIZAÇÃO</span>
+              <h2>Pesquisar</h2>
+            </div>
+          </div>
+
+          <label class="field-label" for="searchInput">Pesquisa rápida</label>
+          <div class="search-field">
+            <span aria-hidden="true">⌕</span>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Nome ou descrição..."
+              autocomplete="off"
+            />
+          </div>
+          <p class="helper-text">
+            A busca considera o nome, a descrição, a Week, a Classe e a
+            Estratégia.
+          </p>
+
+          <div class="filter-divider"></div>
+          <div class="filter-heading-row">
+            <h3>Filtros avançados</h3>
+            <button type="button" id="clearFilters" class="text-button">
+              Limpar
+            </button>
+          </div>
+
+          <label class="field-label" for="yearFilter">Ano</label>
+          <select id="yearFilter" class="filter-control">
+            <option value="">Todos os anos</option>
+          </select>
+
+          <label class="field-label" for="weekFilter">Week</label>
+          <select id="weekFilter" class="filter-control">
+            <option value="">Todas as Weeks</option>
+          </select>
+
+          <label class="field-label" for="classeFilter">Classe</label>
+          <select id="classeFilter" class="filter-control">
+            <option value="">Todas as Classes</option>
+          </select>
+
+          <label class="field-label" for="estrategiaFilter">Estratégia</label>
+          <select id="estrategiaFilter" class="filter-control">
+            <option value="">Todas as Estratégias</option>
+          </select>
+
+          <label class="field-label" for="relevanceFilter">Relevância</label>
+          <select id="relevanceFilter" class="filter-control">
+            <option value="">Todas</option>
+            <option value="High">High</option>
+            <option value="Middle">Middle</option>
+            <option value="Low">Low</option>
+          </select>
+
+          <button type="button" id="btnBuscar" class="primary-button">
+            Aplicar filtros
+          </button>
+          <div class="sidebar-footnote">
+            Use os filtros em conjunto para refinar os resultados.
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <script src="wiki.js"></script>
+  </body>
+</html>
