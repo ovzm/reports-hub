@@ -2,16 +2,20 @@
   "name": "reports-hub",
   "version": "2.0.0",
   "private": true,
-  "description": "Portal de relatórios com controle de acesso por usuário e biblioteca de PDFs pesquisável.",
-  "workspaces": ["server"],
+  "description": "Portal de relatórios com controle de acesso por usuário e biblioteca de PDFs pesquisável. React + Node.js.",
+  "workspaces": ["client", "server"],
   "engines": {
     "node": ">=20.19"
   },
   "scripts": {
-    "dev": "npm run dev -w server",
-    "start": "npm run start -w server",
+    "dev": "concurrently -n server,client -c yellow,cyan \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w client",
+    "start": "npm run build && npm run start -w server",
     "seed": "npm run seed -w server",
     "user": "npm run user -w server --"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.7"
   },
   "license": "MIT"
 }
