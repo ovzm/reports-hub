@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reports Hub | Administração</title>
+    <link rel="stylesheet" href="../style/admin.css" />
+  </head>
+  <body>
+    <div class="admin-layout">
+      <aside class="sidebar">
+        <div class="brand">
+          <div><b>Reports Hub</b><small>Painel administrativo</small></div>
+        </div>
+        <p class="nav-caption">GERENCIAMENTO</p>
+        <button class="menu-btn active" data-page="upload">
+          ＋ &nbsp; Upload
+        </button>
+        <button class="menu-btn" data-page="reports">
+          ▤ &nbsp; Gerenciar PDFs
+        </button>
+        <button class="menu-btn" data-page="filters">
+          ⚙ &nbsp; Criação de filtros
+        </button>
+      </aside>
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">INVESTMENTS BOOK</p>
+            <h1 id="pageTitle">Novo relatório</h1>
+            <p id="pageSubtitle">Cadastre e classifique um novo conteúdo.</p>
+          </div>
+          <div class="topbar-actions">
+            <a class="admin-back-btn" href="/page/home.html">← Voltar ao menu</a>
+            <span class="status-pill">● Área administrativa</span>
+          </div>
+        </header>
+
+        <section id="uploadPage" class="page active-page">
+          <div class="card">
+            <span class="eyebrow">ETAPA 1</span>
+            <h2>Informações do relatório</h2>
+            <p class="subtext">
+              Preencha os dados que serão exibidos na consulta.
+            </p>
+            <form id="uploadForm">
+              <div class="form-grid">
+                <div class="field full">
+                  <label for="reportName">Nome do relatório <em>*</em></label
+                  ><input
+                    id="reportName"
+                    name="nome"
+                    required
+                    placeholder="Ex.: Relatório semanal de mercado"
+                  />
+                </div>
+                <div class="field full">
+                  <label for="reportDescription">Descrição <em>*</em></label
+                  ><textarea
+                    id="reportDescription"
+                    name="descricao"
+                    rows="3"
+                    required
+                    placeholder="Resuma o conteúdo deste relatório..."
+                  ></textarea
+                  ><small
+                    >Esta descrição aparecerá na lista de relatórios da
+                    semana.</small
+                  >
+                </div>
+                <div class="field">
+                  <label for="uploadYear">Ano <em>*</em></label
+                  ><select id="uploadYear" name="ano" required></select>
+                </div>
+                <div class="field">
+                  <label for="uploadWeek">Week <em>*</em></label
+                  ><select id="uploadWeek" name="weekId" required>
+                    <option value="">Selecione uma Week</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="uploadClass">Classe</label
+                  ><select id="uploadClass" name="classeId">
+                    <option value="">Sem classe</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="uploadStrategy">Estratégia</label
+                  ><select id="uploadStrategy" name="estrategiaId">
+                    <option value="">Sem estratégia</option>
+                  </select>
+                </div>
+                <div class="field full">
+                  <label for="uploadRelevance">Relevância <em>*</em></label
+                  ><select id="uploadRelevance" name="relevancia" required>
+                    <option value="High">High — Alta</option>
+                    <option value="Middle" selected>Middle — Média</option>
+                    <option value="Low">Low — Baixa</option></select
+                  ><small>Classifique a prioridade do conteúdo.</small>
+                </div>
+              </div>
+              <div class="type-panel">
+                <div>
+                  <b>Tipo de conteúdo</b>
+                  <p>Escolha entre arquivo PDF ou conteúdo de texto e link.</p>
+                </div>
+                <div class="type-options">
+                  <label class="type-option"
+                    ><input type="radio" name="tipo" value="pdf" checked /><span
+                      ><b>PDF</b><small>Enviar arquivo</small></span
+                    ></label
+                  >
+                  <label class="type-option"
+                    ><input type="radio" name="tipo" value="texto" /><span
+                      ><b>Texto e link</b><small>Conteúdo online</small></span
+                    ></label
+                  >
+                </div>
+              </div>
+              <div id="uploadPdfArea" class="field file-area">
+                <label for="pdfInput">Arquivo PDF <em>*</em></label
+                ><input
+                  type="file"
+                  id="pdfInput"
+                  name="pdf"
+                  accept=".pdf,application/pdf"
+                  required
+                /><small>Tamanho máximo: 50 MB.</small>
+              </div>
+              <div id="textoArea" class="text-area" hidden>
+                <div class="field">
+                  <label for="textoLink">Link (opcional)</label
+                  ><input
+                    type="url"
+                    id="textoLink"
+                    name="link"
+                    placeholder="https://..."
+                  />
+                </div>
+                <div class="field">
+                  <label for="texto">Conteúdo</label
+                  ><textarea
+                    id="texto"
+                    name="texto"
+                    rows="7"
+                    placeholder="Digite o conteúdo..."
+                  ></textarea>
+                </div>
+              </div>
+              <div class="form-footer">
+                <span><em>*</em> Campos obrigatórios</span
+                ><button class="primary-btn" type="submit">
+                  Salvar relatório →
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section id="reportsPage" class="page">
+          <div class="card">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">BIBLIOTECA</span>
+                <h2>Gerenciar relatórios</h2>
+                <p class="subtext">
+                  Edite dados, filtros e conteúdo ou exclua um relatório.
+                </p>
+              </div>
+              <input
+                id="reportSearch"
+                class="search"
+                type="search"
+                placeholder="Buscar relatório ou filtro..."
+              />
+            </div>
+            <div id="reportsList">
+              <p class="empty">Carregando relatórios...</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="filtersPage" class="page">
+          <div class="card intro-card">
+            <span class="eyebrow">CONFIGURAÇÃO</span>
+            <h2>Criação de filtros</h2>
+            <p class="subtext">
+              Cadastre, renomeie ou exclua as opções que serão disponibilizadas
+              no upload e na edição.
+            </p>
+          </div>
+          <div class="filter-grid">
+            <section class="filter-card">
+              <div class="filter-title">
+                <span class="filter-icon orange">W</span>
+                <div>
+                  <h3>Weeks</h3>
+                  <p>Períodos personalizados</p>
+                </div>
+              </div>
+              <form id="weekForm" class="create-form">
+                <label class="sr-only" for="weekName">Nome da Week</label
+                ><input
+                  id="weekName"
+                  placeholder="Ex.: Week 52/51/50"
+                  required
+                /><button class="primary-btn" type="submit">Criar</button>
+              </form>
+              <div id="weeksList" class="options-list"></div>
+            </section>
+            <section class="filter-card">
+              <div class="filter-title">
+                <span class="filter-icon blue">C</span>
+                <div>
+                  <h3>Classe</h3>
+                  <p>Classificação do relatório</p>
+                </div>
+              </div>
+              <form id="classForm" class="create-form">
+                <label class="sr-only" for="className">Nome da classe</label
+                ><input
+                  id="className"
+                  placeholder="Ex.: Renda Variável"
+                  required
+                /><button class="primary-btn" type="submit">Criar</button>
+              </form>
+              <div id="classesList" class="options-list"></div>
+            </section>
+            <section class="filter-card">
+              <div class="filter-title">
+                <span class="filter-icon green">E</span>
+                <div>
+                  <h3>Estratégia</h3>
+                  <p>Estratégia de investimento</p>
+                </div>
+              </div>
+              <form id="strategyForm" class="create-form">
+                <label class="sr-only" for="strategyName"
+                  >Nome da estratégia</label
+                ><input
+                  id="strategyName"
+                  placeholder="Ex.: Long Only"
+                  required
+                /><button class="primary-btn" type="submit">Criar</button>
+              </form>
+              <div id="strategiesList" class="options-list"></div>
+            </section>
+          </div>
+          <div class="relevance-note">
+            <div class="info-icon">i</div>
+            <div>
+              <b>Filtro de relevância</b>
+              <p>
+                High, Middle e Low são opções fixas, já disponíveis no upload e
+                na edição de cada relatório.
+              </p>
+            </div>
+            <div class="chips">
+              <span class="high">High</span><span class="middle">Middle</span
+              ><span class="low">Low</span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div id="toastRegion" class="toast-region" aria-live="polite"></div>
+    <script src="../js/admin.js"></script>
+  </body>
+</html>
