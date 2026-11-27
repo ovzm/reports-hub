@@ -1,0 +1,303 @@
+.content:has(.book-layout) {
+  max-width: none;
+  padding: 0;
+}
+
+.book-layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr) 290px;
+  min-height: 100vh;
+}
+
+.book-side,
+.book-filters {
+  padding: 28px 20px;
+  background: var(--surface);
+  border-right: 1px solid var(--line);
+}
+
+.book-filters {
+  border-right: 0;
+  border-left: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+}
+
+.book-side h2,
+.book-filters h2 {
+  font-size: 19px;
+  margin-bottom: 18px;
+}
+
+.book-main {
+  padding: 28px 32px 48px;
+  min-width: 0;
+}
+
+.book-main-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.book-main-header h1 {
+  font-size: 24px;
+}
+
+.book-main-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filters-toggle {
+  display: none;
+}
+
+.period-tree {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.period-year-btn,
+.period-week-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: none;
+  text-align: left;
+}
+
+.period-year-btn {
+  height: 40px;
+  padding: 0 8px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.period-week-btn {
+  height: 36px;
+  padding: 0 10px 0 30px;
+  color: var(--ink-2);
+}
+
+.period-year-btn:hover,
+.period-week-btn:hover {
+  background: #f3f4f6;
+}
+
+.period-year-btn.selected,
+.period-week-btn.selected {
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+}
+
+.period-tree .chevron {
+  transition: transform 0.15s;
+  color: var(--muted);
+}
+
+.period-tree .chevron.open {
+  transform: rotate(90deg);
+}
+
+.period-tree .count {
+  margin-left: auto;
+  min-width: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: #eef0f3;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.period-tree .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #c5cad2;
+}
+
+.period-week-btn.selected .dot {
+  background: var(--accent);
+}
+
+.filter-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.filter-panel .search-box {
+  margin-top: 0;
+}
+
+.filter-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.filter-heading h3 {
+  font-size: 14px;
+}
+
+.filter-panel .segmented button {
+  font-size: 12px;
+}
+
+.book-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.book-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.book-card-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.book-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.book-card-body h3 {
+  font-size: 16px;
+}
+
+.book-card-body p {
+  margin: 4px 0 12px;
+  color: var(--muted);
+}
+
+.document-viewer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: calc(100vh - 76px);
+}
+
+.document-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.document-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.document-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.document-header {
+  padding: 20px 22px;
+  border-bottom: 1px solid var(--line);
+}
+
+.document-header h2 {
+  font-size: 20px;
+}
+
+.document-header p {
+  margin: 4px 0 12px;
+  color: var(--muted);
+}
+
+.document-frame {
+  flex: 1;
+  width: 100%;
+  min-height: 480px;
+  border: 0;
+  background: #525659;
+}
+
+.document-text {
+  padding: 22px;
+  white-space: pre-wrap;
+  line-height: 1.7;
+}
+
+@media (max-width: 1280px) {
+  .book-layout {
+    grid-template-columns: 220px minmax(0, 1fr);
+  }
+
+  .filters-toggle {
+    display: inline-flex;
+  }
+
+  .book-filters {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 300px;
+    z-index: 80;
+    overflow: auto;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .book-filters.open {
+    display: flex;
+  }
+}
+
+@media (max-width: 760px) {
+  .book-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .book-side {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .book-main {
+    padding: 20px 16px;
+  }
+
+  .book-card {
+    flex-wrap: wrap;
+  }
+}
