@@ -3,6 +3,8 @@ import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import AppLayout from "./components/AppLayout.jsx";
 import Login from "./pages/Login.jsx";
 import Home from "./pages/Home.jsx";
+import Reports from "./pages/Reports.jsx";
+import ReportViewer from "./pages/ReportViewer.jsx";
 
 export default function App() {
   return (
@@ -11,6 +13,8 @@ export default function App() {
       <Route element={<ProtectedRoute />}>
         <Route element={<AppLayout />}>
           <Route index element={<Home />} />
+          <Route path="relatorios" element={<Reports />} />
+          <Route path="relatorios/:id" element={<ReportViewer />} />
         </Route>
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
