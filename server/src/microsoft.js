@@ -34,8 +34,8 @@
 //     (req, res) => {
 //       const email = req.user.emails[0].value.toLowerCase();
 //       const user = findUser(email);
-//       if (!user) return res.redirect("/index.html?erro=sem-permissao");
-//       res.redirect(`/page/home.html?token=${signToken(user)}`);
+//       if (!user) return res.redirect("/login?erro=sem-permissao");
+//       res.redirect(`/login?token=${signToken(user)}`);
 //     }
 //   );
 // }

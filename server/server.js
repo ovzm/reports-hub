@@ -1,7 +1,9 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import { PUBLIC_DIR } from "./src/paths.js";
+import fs from "fs";
+import path from "path";
+import { CLIENT_DIST } from "./src/paths.js";
 import { authRouter } from "./src/auth.js";
 import { reportsRouter } from "./src/reports.js";
 import { bookRouter } from "./src/book.js";
@@ -26,12 +28,14 @@ app.use(express.json());
 app.use("/auth", authRouter);
 app.use("/api/reports", reportsRouter);
 app.use("/api/book", bookRouter);
-app.use(express.static(PUBLIC_DIR));
+
+if (fs.existsSync(CLIENT_DIST)) {
+  app.use(express.static(CLIENT_DIST));
+  app.get(/^\/(?!api|auth).*/, (_req, res) => res.sendFile(path.join(CLIENT_DIST, "index.html")));
+}
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
-  console.log(`  Relatórios:         http://localhost:${PORT}/`);
-  console.log(`  Investments Book:   http://localhost:${PORT}/book/index.html`);
-  console.log(`  Painel admin Book:  http://localhost:${PORT}/book/pages/admin.html`);
+  console.log(`API rodando em http://localhost:${PORT}`);
+  if (fs.existsSync(CLIENT_DIST)) console.log(`App disponível em http://localhost:${PORT}`);
 });
